@@ -34,7 +34,7 @@ uncomment() {
     sed -i -e 's,^#'"$1"','"$1"',g' $2
 }
 
-do_install_append() {
+do_install_append_fslbsp() {
     if [ -f "${WORKDIR}/weston.config" ]; then
         install -Dm0755 ${WORKDIR}/weston.config ${D}${sysconfdir}/default/weston
     fi

@@ -28,9 +28,9 @@ USE_OSMESA_ONLY ?= "no"
 USE_OSMESA_ONLY_mx8 ?= "yes"
 
 # Enable OSMesa which also requires dri (classic) swrast
-PACKAGECONFIG_append = " ${@oe.utils.conditional('USE_OSMESA_ONLY', 'yes', ' osmesa', '', d)}"
-PACKAGECONFIG_remove = " ${@oe.utils.conditional('USE_OSMESA_ONLY', 'yes', 'gallium', '', d)}"
-DRIDRIVERS_append = "${@oe.utils.conditional('USE_OSMESA_ONLY', 'yes', 'swrast', '', d)}"
+PACKAGECONFIG_append_fslbsp = " ${@oe.utils.conditional('USE_OSMESA_ONLY', 'yes', ' osmesa', '', d)}"
+PACKAGECONFIG_remove_fslbsp = " ${@oe.utils.conditional('USE_OSMESA_ONLY', 'yes', 'gallium', '', d)}"
+DRIDRIVERS_append_fslbsp = "${@oe.utils.conditional('USE_OSMESA_ONLY', 'yes', 'swrast', '', d)}"
 
 BACKEND = \
     "${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'wayland', \

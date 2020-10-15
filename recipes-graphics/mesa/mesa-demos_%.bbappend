@@ -21,6 +21,6 @@ PACKAGECONFIG_APPEND_IF_GPU_imxgpu = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'wayland vg', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES',     'x11',       'glut', '', d)} \
 "
-PACKAGECONFIG_append = " \
+PACKAGECONFIG_append_fslbsp = " \
     ${PACKAGECONFIG_APPEND_IF_GPU} \
 "

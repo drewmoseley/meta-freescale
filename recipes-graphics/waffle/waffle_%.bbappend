@@ -1,6 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI += " \
+SRC_URI_append_fslbsp = " \
     file://0001-meson-Add-missing-wayland-dependency-on-EGL.patch \
     file://0002-meson-Separate-surfaceless-option-from-x11.patch \
 "
